@@ -71,7 +71,7 @@ void ofxPlaygroundSceneManager::drawTransitionBlackOverlay(float transitionTime)
 }
 
 
-void ofxPlaygroundSceneManager::addScene(PlaygroundScene & scene) {
+void ofxPlaygroundSceneManager::addScene(ofxPlaygroundScene & scene) {
     scenes.push_back(&scene);
     currentScene = scenes.size()-1;
 }

@@ -13,12 +13,12 @@ class ofxPlaygroundSceneManager {
         void drawSceneWithTargets(int sceneIndex);
         void drawTransitionBlackOverlay(float transitionTime);
 
-        void addScene(PlaygroundScene & scene);
+        void addScene(ofxPlaygroundScene & scene);
         void nextScene();
 
         bool inSceneTransition;
 
-    vector <PlaygroundScene*> scenes;
+    vector <ofxPlaygroundScene*> scenes;
     vector <glm::vec2> targets;
 
     int currentScene;

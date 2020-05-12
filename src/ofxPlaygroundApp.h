@@ -25,7 +25,7 @@ class ofxPlaygroundApp {
 
         // scene management
         void setupScenes();
-        void addScene(PlaygroundScene & scene);
+        void addScene(ofxPlaygroundScene & scene);
         void nextScene();
 
         #ifdef PLAYGROUND_PLATFORM_OSX // OSX/desktop specific
@@ -60,5 +60,5 @@ class ofxPlaygroundApp {
     #endif // iOS/mobile specific
 
     float scaleFactor;
-    PlaygroundSceneManager sm;
+    ofxPlaygroundSceneManager sm;
 };

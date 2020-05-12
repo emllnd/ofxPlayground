@@ -50,7 +50,7 @@ void ofxPlaygroundApp::setupScenes() {
 }
 
 
-void ofxPlaygroundApp::addScene(PlaygroundScene & scene) {
+void ofxPlaygroundApp::addScene(ofxPlaygroundScene & scene) {
     sm.addScene(scene);
 }
 
