@@ -1,11 +1,7 @@
-#include "ofxPlaygroundScene.h"
+#include "ofxPlaygroundHelpers.h"
 
-// virtual void setup() = 0;
-// virtual void update() = 0;
-// virtual void draw() = 0;
-// virtual void drawTarget(glm::vec2 pos) = 0;
 
-void ofxPlaygroundScene::drawScatter(
+void ofxPlaygroundHelpers::drawScatter(
     ofPolyline shape,
     glm::vec2 scatter_amount, int num_copies, float seed,
     glm::vec4 color_rgba, float lineWidth
@@ -35,7 +31,7 @@ void ofxPlaygroundScene::drawScatter(
 }
 
 
-void ofxPlaygroundScene::drawConcentric(
+void ofxPlaygroundHelpers::drawConcentric(
     ofPolyline shape, float size, glm::vec4 color_rgba, float lineWidth
 ) {
     // set drawing options
@@ -60,7 +56,7 @@ void ofxPlaygroundScene::drawConcentric(
 }
 
 
-void ofxPlaygroundScene::drawParticleFlow( // along shape
+void ofxPlaygroundHelpers::drawParticleFlow( // along shape
     ofPolyline shape, float width, float wrapHeight,
     int pNum, glm::vec2 pSize, glm::vec4 color_rgba, float seed
 ) {
@@ -105,7 +101,7 @@ void ofxPlaygroundScene::drawParticleFlow( // along shape
 // generates a square centered at origin
 // with coordinates from -10 to 10
 // resolution = amount of points per line (minus one)
-ofPolyline ofxPlaygroundScene::generateSubidividedSquare(int resolution) {
+ofPolyline ofxPlaygroundHelpers::generateSubidividedSquare(int resolution) {
     ofPolyline sq;
 
     // top line left to right
@@ -135,7 +131,7 @@ ofPolyline ofxPlaygroundScene::generateSubidividedSquare(int resolution) {
 
 // generates a line centered at origin
 // with x coordinates from -10 to 10 and y = 0
-ofPolyline ofxPlaygroundScene::generateSubidividedLine(int resolution) {
+ofPolyline ofxPlaygroundHelpers::generateSubidividedLine(int resolution) {
     ofPolyline line;
 
     // line left to right
