@@ -4,12 +4,12 @@
 void ofxPlaygroundHelpers::drawScatter(
     ofPolyline shape,
     glm::vec2 scatter_amount, int num_copies, float seed,
-    glm::vec4 color_rgba, float lineWidth
+    ofColor col, float lineWidth
 ) {
     // set drawing options
     ofFill();
     ofSetLineWidth(lineWidth);
-    ofSetColor(color_rgba.r, color_rgba.g, color_rgba.b, color_rgba.a);
+    ofSetColor(col);
 
     // transformation
     ofPushMatrix();
@@ -32,12 +32,12 @@ void ofxPlaygroundHelpers::drawScatter(
 
 
 void ofxPlaygroundHelpers::drawConcentric(
-    ofPolyline shape, float size, glm::vec4 color_rgba, float lineWidth
+    ofPolyline shape, float size, ofColor col, float lineWidth
 ) {
     // set drawing options
     ofFill();
     ofSetLineWidth(lineWidth);
-    ofSetColor(color_rgba.r, color_rgba.g, color_rgba.b, color_rgba.a);
+    ofSetColor(col);
 
     ofPushMatrix(); ofScale(size);
     shape.draw(); ofPopMatrix();
@@ -58,14 +58,14 @@ void ofxPlaygroundHelpers::drawConcentric(
 
 void ofxPlaygroundHelpers::drawParticleFlow( // along shape
     ofPolyline shape, float width, float wrapHeight,
-    int pNum, glm::vec2 pSize, glm::vec4 color_rgba, float seed
+    int pNum, glm::vec2 pSize, ofColor col, float seed
 ) {
     // transformation
     ofPushMatrix();
     //ofTranslate(pos);
     //ofScale(size);
 
-    ofSetColor( color_rgba.r, color_rgba.g, color_rgba.b, color_rgba.a );
+    ofSetColor(col);
 
     float skip = 0;
     float particleID = 0;
