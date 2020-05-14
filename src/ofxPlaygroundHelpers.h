@@ -16,6 +16,10 @@ class ofxPlaygroundHelpers {
         void drawParticleFlow(ofPolyline shape, float width, float wrapHeight,
             int pNum, glm::vec2 pSize, ofColor col, float seed );
 
+        //void drawDroopingLine(glm::vec2 startPos, glm::vec2 endPos);
+        /*void drawAngularLine(glm::vec2 startPos, glm::vec2 endPos,
+            ofColor col, float lineWidth, int numSegments, float scatterAmount, float seed);*/
+
         ofPolyline generateSubidividedSquare(int resolution);
         ofPolyline generateSubidividedLine(int resolution);
 
