@@ -142,3 +142,35 @@ ofPolyline ofxPlaygroundHelpers::generateSubidividedLine(int resolution) {
     return line;
 }
 
+
+// for input value:
+// angle in degrees, CCW
+// top is 0deg, left is 90deg, bottom is 180deg, right is 270deg (I believe..?)
+glm::vec2 ofxPlaygroundHelpers::angleToPosOnUnitSquareDeg(float angle) {
+
+    glm::vec2 pos = {1,0};
+
+    // inside this function:
+    // angle in degrees, CCW
+    // right is 0deg, top is 90deg, left is 180deg, bottom is 270deg
+    float a = ofWrap(angle-90, 0, 360);
+
+    if ( (a>0 && a<45) || (a<360 && a>315) ) { // right edge
+        pos.x = 1;
+        if (a>0 && a<45)    { pos.y = ofMap(a, 0, 45, 0, -1); }
+        if (a<360 && a>315) { pos.y = ofMap(a, 315, 360, 1, 0); }
+    } else if (a>45 && a<135) { // top edge
+        pos.x = ofMap( a, 45, 135, 1, -1);
+        pos.y = -1;
+    } else if (a>135 && a<225) { // left edge
+        pos.x = -1;
+        pos.y = ofMap( a, 135, 225, -1, 1);
+    } else if (a>225 && a<315) { // bottom edge
+        pos.x = ofMap( a, 225, 315, -1, 1);
+        pos.y = 1;
+    } else {}
+
+    return pos;
+}
+
+

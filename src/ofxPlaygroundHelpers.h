@@ -19,5 +19,7 @@ class ofxPlaygroundHelpers {
         ofPolyline generateSubidividedSquare(int resolution);
         ofPolyline generateSubidividedLine(int resolution);
 
+        glm::vec2 angleToPosOnUnitSquareDeg(float angle);
+
 };
 
